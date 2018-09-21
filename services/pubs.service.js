@@ -1,15 +1,15 @@
 const _ = require('lodash');
-var list = require("../mocks/mocks.json")
+var list = require("../mocks/mock.json")
 
 function listAllPub(){
     return list ;
 
 }
 function listOpenPub(day){
-    var listOpen ;
+    var listOpen = [];
     list.forEach(function (p){
-        if(p.openDays.contains(day)){
-            listOpen.add(p);
+        if(_.includes(p.openDays, day)){
+            listOpen.push(p);
         }
     })
     return listOpen;
